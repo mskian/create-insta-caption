@@ -1,4 +1,4 @@
-import { FC, useState } from 'preact/compat';
+import { FC, useState, useEffect } from 'preact/compat';
 import CaptionInput from '../components/CaptionInput';
 import HashtagInput from '../components/HashtagInput';
 import OutputSection from '../components/OutputSection';
@@ -7,8 +7,19 @@ const Home: FC = () => {
   const [caption, setCaption] = useState('');
   const [hashtags, setHashtags] = useState<string[]>([]);
 
+  useEffect(() => {
+    const storedHashtags = JSON.parse(localStorage.getItem('hashtags') || '[]');
+    setHashtags(storedHashtags);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('hashtags', JSON.stringify(hashtags));
+  }, [hashtags]);
+
   const addHashtag = (hashtag: string) => {
-    setHashtags([...hashtags, hashtag]);
+    if (!hashtags.includes(hashtag)) {
+      setHashtags([...hashtags, hashtag]);
+    }
   };
 
   const removeHashtag = (hashtag: string) => {
@@ -18,6 +29,8 @@ const Home: FC = () => {
   const clearAll = () => {
     setCaption('');
     setHashtags([]);
+    localStorage.removeItem('caption');
+    localStorage.removeItem('hashtags');
   };
 
   return (

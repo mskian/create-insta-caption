@@ -1,4 +1,4 @@
-import { FC } from 'preact/compat';
+import { FC, useEffect } from 'preact/compat';
 
 interface CaptionInputProps {
   caption: string;
@@ -6,6 +6,16 @@ interface CaptionInputProps {
 }
 
 const CaptionInput: FC<CaptionInputProps> = ({ caption, onChange }) => {
+
+  useEffect(() => {
+    const storedCaption = localStorage.getItem('caption') || '';
+    onChange(storedCaption);
+  }, [onChange]);
+
+  useEffect(() => {
+    localStorage.setItem('caption', caption);
+  }, [caption]);
+
   return (
     <div class="mb-6">
       <textarea

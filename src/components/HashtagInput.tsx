@@ -84,6 +84,10 @@ const HashtagInput: FC<HashtagInputProps> = ({ hashtags, onAddHashtag, onRemoveH
     setSuggestions([]);
   };
 
+  const handleRemoveHashtag = (hashtag: string) => {
+    onRemoveHashtag(hashtag);
+  };
+
   useEffect(() => {
     handleInputChange(input);
   }, [input]);
@@ -117,12 +121,19 @@ const HashtagInput: FC<HashtagInputProps> = ({ hashtags, onAddHashtag, onRemoveH
       {hashtags.length > 0 && (
         <div class="flex flex-wrap gap-2 mt-2">
           {hashtags.map((hashtag, index) => (
-            <span
-              key={`${hashtag}-${index}`}
-              class="bg-gradient-to-r from-purple-400 to-indigo-500 text-white px-4 py-1 rounded-full cursor-default text-sm font-medium shadow-md whitespace-pre-line text-wrap break-words"
-            >
-              {hashtag}
-            </span>
+            <div key={`${hashtag}-${index}`} class="flex items-center gap-1">
+              <span
+                class="bg-gradient-to-r from-purple-400 to-indigo-500 text-white px-4 py-1 rounded-full cursor-default text-sm font-medium shadow-md whitespace-pre-line text-wrap break-words"
+              >
+                {hashtag}
+                <button 
+                onClick={() => handleRemoveHashtag(hashtag)} 
+                class="ml-2 text-red-800 text-lg font-bold focus:outline-none hover:text-red-600"
+              >
+                &times;
+              </button>
+              </span>
+            </div>
           ))}
         </div>
       )}
