@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	font-family: "Hind Madurai", sans-serif;
+	min-height: 100vh;
+}
+  body {
+	font-family: "Hind Madurai", sans-serif;
+	font-weight: 600;
+}
+
+@layer base {
+  body {
+    @apply bg-gradient-to-r from-[#f9f9f9] to-[#e0e0e0];
+    color: #333;
+  }
+}
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-[#ff6f61] to-[#ff9a8b] text-white;
+  }
+  .btn-secondary {
+    @apply bg-gradient-to-r from-[#4a90e2] to-[#7b92e3] text-white;
+  }
+  .btn-clear {
+    @apply bg-gradient-to-r from-[#f4f4f4] to-[#e0e0e0] text-gray-800;
+  }
+  .input-box {
+    @apply bg-white border border-gray-300 rounded-lg shadow-md;
+  }
+}
+
+@layer utilities {
+  .bg-linear-gradient {
+    background: linear-gradient(to right, #f9f9f9, #e0e0e0);
+  }
+  .bg-gradient-button-primary {
+    background: linear-gradient(to right, #ff6f61, #ff9a8b);
+  }
+  .bg-gradient-button-secondary {
+    background: linear-gradient(to right, #4a90e2, #7b92e3);
+  }
+  .bg-gradient-button-clear {
+    background: linear-gradient(to right, #f4f4f4, #e0e0e0);
+  }
+}
+@layer components {
+  .copy-icon {
+    @apply text-gray-600 cursor-pointer transition-colors hover:text-gray-800;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .btn-clear-small {
+    @apply bg-gradient-to-r from-[#f4f4f4] to-[#e0e0e0] text-gray-800;
+    @apply px-3 py-1 rounded-lg shadow-md hover:bg-gray-300 transition-colors;
+  }
+}
+@layer components {
+  .copy-icon {
+    @apply text-gray-600 cursor-pointer transition-colors hover:text-gray-800;
+    font-size: 1.5rem; /* Adjusted size */
+    line-height: 1;
+  }
+
+  .btn-clear-small {
+    @apply bg-gradient-to-r from-[#f4f4f4] to-[#e0e0e0] text-gray-800;
+    @apply px-3 py-1 rounded-lg shadow-md hover:bg-gray-300 transition-colors;
+    font-size: 0.875rem; /* Reduced font size */
+  }
+
+  .bg-linear-gradient {
+    background: linear-gradient(to right, #ffffff, #f0f0f0); /* Subtle gradient for a clean look */
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-[#007bff] to-[#0056b3] text-white;
+    @apply px-4 py-2 rounded-lg shadow-md hover:bg-gradient-to-r hover:from-[#0056b3] hover:to-[#003d7a];
+  }
+
+  .input-box {
+    @apply bg-gray-300 text-gray-800;
+  }
+
+  .text-text {
+    color: #333333; 
+  }
+
+  .text-primary {
+    color: #007bff;
+  }
+}
