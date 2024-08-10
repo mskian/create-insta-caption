@@ -9,7 +9,7 @@ dependencies:
     specifier: ^7.0.0
     version: 7.0.0
   preact:
-    specifier: ^10.22.1
+    specifier: ^10.23.1
     version: 10.23.1
 
 devDependencies:
