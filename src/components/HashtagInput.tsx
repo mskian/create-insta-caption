@@ -101,9 +101,18 @@ const HashtagInput: FC<HashtagInputProps> = ({ hashtags, onAddHashtag, onRemoveH
 
   return (
     <div class="relative mb-6 w-full max-w-lg mx-auto">
+      <div class="p-4 mb-4 text-sm text-black bg-yellow-100 border border-yellow-300 rounded-lg" role="alert">
+        <p>
+          Add a new tag by searching or just typing text with 
+          <span class="font-semibold text-yellow-900 bg-yellow-200 px-1 py-0.5 rounded-md mx-1">#</span>
+          and use 
+          <span class="font-semibold"> Enter</span> or 
+          <span class="font-semibold"> Comma</span> to insert a hashtag.
+        </p>
+      </div>
       <input
         type="text"
-        placeholder="#AddHashtags"
+        placeholder="#AddHashtag"
         value={input}
         onInput={handleChange}
         onKeyDown={handleKeyDown}
