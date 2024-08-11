@@ -1,4 +1,5 @@
 import { FC, useState, ChangeEvent, useRef, useEffect } from 'preact/compat';
+import { FaHashtag, FaAsterisk, FaFaceGrinHearts, FaMusic } from "react-icons/fa6";
 
 interface CaptionInputProps {
   caption: string;
@@ -6,7 +7,7 @@ interface CaptionInputProps {
 }
 
 const emojis = [
-  '🥳', '🥤', '🔥', '👋', '😢', '😎', '🥳', '👋', '😅', '😜', '😱', '😡', '✅', '💩', '👻', '⚡', '🍻', '🦊'
+  '🥳', '🥤', '🔥', '👋', '😢', '😎', '🥳', '👋', '😅', '😜', '😱', '😡', '✅', '💩', '👻', '⚡', '🍻', '🦊', '⚠', '▶'
 ];
 
 const CaptionInput: FC<CaptionInputProps> = ({ caption, onChange }) => {
@@ -74,26 +75,34 @@ const CaptionInput: FC<CaptionInputProps> = ({ caption, onChange }) => {
         <button
           type="button"
           onClick={() => handleSymbolClick('*')}
-          class={`flex items-center justify-center px-2 py-1 rounded-md focus:outline-none transition-colors duration-200 ${symbolType === '*' ? 'bg-blue-600 text-white' : 'bg-gray-900 text-gray-200'}`}
+          class={`flex items-center justify-center px-2 py-2 rounded-md focus:outline-none transition-colors duration-200 ${symbolType === '*' ? 'bg-blue-600 text-white' : 'bg-gray-900 text-gray-200'}`}
           title="Add Bullet Symbol"
         >
-          *️⃣
+          <FaAsterisk />
         </button>
         <button
           type="button"
           onClick={() => handleSymbolClick('#')}
-          class={`flex items-center justify-center px-2 py-1 rounded-md focus:outline-none transition-colors duration-200 ${symbolType === '#' ? 'bg-green-600 text-white' : 'bg-gray-900 text-gray-200'}`}
+          class={`flex items-center justify-center px-2 py-2 rounded-md focus:outline-none transition-colors duration-200 ${symbolType === '#' ? 'bg-green-600 text-white' : 'bg-gray-900 text-gray-200'}`}
           title="Add Number Symbol"
         >
-          #️⃣
+          <FaHashtag />
         </button>
         <button
           type="button"
           onClick={togglePicker}
-          class="flex items-center justify-center px-2 py-1 rounded-md focus:outline-none transition-colors duration-200 text-yellow-600 bg-gray-900 hover:bg-gray-900"
+          class="flex items-center justify-center px-2 py-2 rounded-md focus:outline-none transition-colors duration-200 text-yellow-400 bg-gray-900 hover:bg-gray-900"
           title="Emoji Picker"
         >
-          🙂
+          <FaFaceGrinHearts />
+        </button>
+        <button
+          type="button"
+          onClick={() => handleSymbolClick('♫')}
+          class={`flex items-center justify-center px-2 py-2 rounded-md focus:outline-none transition-colors duration-200 ${symbolType === '#' ? 'bg-green-600 text-white' : 'bg-gray-900 text-gray-200'}`}
+          title="Add Number Symbol"
+        >
+          <FaMusic />
         </button>
       </div>
       {showPicker && (

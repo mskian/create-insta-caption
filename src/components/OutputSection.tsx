@@ -1,4 +1,5 @@
 import { FC, useState } from 'preact/compat';
+import { FaCopy } from "react-icons/fa6";
 
 interface OutputSectionProps {
   caption: string;
@@ -28,13 +29,13 @@ const OutputSection: FC<OutputSectionProps> = ({ caption, hashtags }) => {
       {(caption || hashtags.length > 0) && (
         <button
           onClick={handleCopy}
-          class="absolute top-2 right-4 bg-gradient-to-r from-red-500 to-rose-600 text-white p-2 rounded-full shadow-lg hover:bg-gradient-to-l transition duration-150"
+          class="absolute top-2 right-4 bg-gradient-to-r from-red-500 to-rose-600 text-white p-1.5 rounded-lg shadow-lg hover:bg-gradient-to-l transition duration-150"
         >
           {isCopied ? (
             <span class="text-sm font-medium">✓ Copied</span>
           ) : (
             <span class="text-xs" aria-label="Copy">
-              &#x1F4CB; {/* Clipboard emoji */}
+              <FaCopy />
             </span>
           )}
         </button>

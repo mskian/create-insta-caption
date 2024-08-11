@@ -11,6 +11,7 @@ Instagram Caption Maker - A Simple Web App to Create Captions and Hashtags for Y
 - Typescript
 - Tailwind CSS
 - Fuse.js (Real-time hashtag Search)
+- React Icons
 - Hosted at Cloudflare Pages : **<https://instahash.pages.dev/>**  
 
 ## Setup and Usage
