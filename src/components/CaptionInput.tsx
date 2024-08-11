@@ -1,4 +1,4 @@
-import { FC, useState, ChangeEvent, useRef } from 'preact/compat';
+import { FC, useState, ChangeEvent, useRef, useEffect } from 'preact/compat';
 
 interface CaptionInputProps {
   caption: string;
@@ -29,6 +29,11 @@ const CaptionInput: FC<CaptionInputProps> = ({ caption, onChange }) => {
     onChange(e.currentTarget.value);
   };
 
+  useEffect(() => {
+    const storedCaption = localStorage.getItem('caption') || '';
+    onChange(storedCaption);
+  }, [onChange]);
+
   const togglePicker = () => setShowPicker(prev => !prev);
 
   const addSymbol = (symbol: string) => {
@@ -42,6 +47,10 @@ const CaptionInput: FC<CaptionInputProps> = ({ caption, onChange }) => {
     }
   };
 
+  useEffect(() => {
+    localStorage.setItem('caption', caption);
+  }, [caption]);
+
   const handleSymbolClick = (symbol: string) => {
     if (symbolType === symbol) {
       setSymbolType(null);
@@ -53,7 +62,6 @@ const CaptionInput: FC<CaptionInputProps> = ({ caption, onChange }) => {
 
   return (
     <div class="relative mb-6">
-      {/* Input Box */}
       <textarea
         placeholder="Type your caption here..."
         value={caption}
@@ -66,7 +74,7 @@ const CaptionInput: FC<CaptionInputProps> = ({ caption, onChange }) => {
         <button
           type="button"
           onClick={() => handleSymbolClick('*')}
-          class={`flex items-center justify-center p-3 rounded-lg focus:outline-none transition-colors duration-200 ${symbolType === '*' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-600'}`}
+          class={`flex items-center justify-center px-2 py-1 rounded-md focus:outline-none transition-colors duration-200 ${symbolType === '*' ? 'bg-blue-600 text-white' : 'bg-gray-800 text-gray-200'}`}
           title="Add Bullet Symbol"
         >
           *
@@ -74,7 +82,7 @@ const CaptionInput: FC<CaptionInputProps> = ({ caption, onChange }) => {
         <button
           type="button"
           onClick={() => handleSymbolClick('#')}
-          class={`flex items-center justify-center p-3 rounded-lg focus:outline-none transition-colors duration-200 ${symbolType === '#' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-600'}`}
+          class={`flex items-center justify-center px-2 py-1 rounded-md focus:outline-none transition-colors duration-200 ${symbolType === '#' ? 'bg-green-600 text-white' : 'bg-gray-800 text-gray-200'}`}
           title="Add Number Symbol"
         >
           #
@@ -82,7 +90,7 @@ const CaptionInput: FC<CaptionInputProps> = ({ caption, onChange }) => {
         <button
           type="button"
           onClick={togglePicker}
-          class="flex items-center justify-center p-3 rounded-lg focus:outline-none transition-colors duration-200 text-yellow-600 bg-gray-100 hover:bg-gray-200"
+          class="flex items-center justify-center px-2 py-1 rounded-md focus:outline-none transition-colors duration-200 text-yellow-600 bg-gray-800 hover:bg-gray-800"
           title="Emoji Picker"
         >
           🙂

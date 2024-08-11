@@ -50,10 +50,15 @@ const HashtagInput: FC<HashtagInputProps> = ({ hashtags, onAddHashtag, onRemoveH
     if (e.key === 'Enter' || e.key === ',' || e.key === ' ') {
       e.preventDefault();
 
-      const tags = input
+      let tags = input
         .split(/[\s,]+/)
         .map(tag => tag.trim())
         .filter(tag => tag.startsWith('#') && tag.length > 1 && !hashtags.includes(tag));
+
+      if (suggestions.length > 0) {
+        const suggestion = suggestions[0];
+        tags = [`${suggestion}`];
+      }
 
       if (tags.length > 0) {
         tags.forEach(tag => {
@@ -87,8 +92,11 @@ const HashtagInput: FC<HashtagInputProps> = ({ hashtags, onAddHashtag, onRemoveH
   };
 
   const handleSuggestionClick = (suggestion: string) => {
-    if (!hashtags.includes(suggestion)) {
-      onAddHashtag(suggestion);
+    const lastPart = input.split(/[\s,]+/).pop() || '';
+    const newInput = input.slice(0, input.length - lastPart.length) + `#${suggestion}`;
+
+    if (!hashtags.includes(`#${suggestion}`)) {
+      onAddHashtag(`#${suggestion}`);
       setInput('');
       setError(null);
     }
