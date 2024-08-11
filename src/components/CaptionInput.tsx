@@ -74,23 +74,23 @@ const CaptionInput: FC<CaptionInputProps> = ({ caption, onChange }) => {
         <button
           type="button"
           onClick={() => handleSymbolClick('*')}
-          class={`flex items-center justify-center px-2 py-1 rounded-md focus:outline-none transition-colors duration-200 ${symbolType === '*' ? 'bg-blue-600 text-white' : 'bg-gray-800 text-gray-200'}`}
+          class={`flex items-center justify-center px-2 py-1 rounded-md focus:outline-none transition-colors duration-200 ${symbolType === '*' ? 'bg-blue-600 text-white' : 'bg-gray-900 text-gray-200'}`}
           title="Add Bullet Symbol"
         >
-          *
+          *️⃣
         </button>
         <button
           type="button"
           onClick={() => handleSymbolClick('#')}
-          class={`flex items-center justify-center px-2 py-1 rounded-md focus:outline-none transition-colors duration-200 ${symbolType === '#' ? 'bg-green-600 text-white' : 'bg-gray-800 text-gray-200'}`}
+          class={`flex items-center justify-center px-2 py-1 rounded-md focus:outline-none transition-colors duration-200 ${symbolType === '#' ? 'bg-green-600 text-white' : 'bg-gray-900 text-gray-200'}`}
           title="Add Number Symbol"
         >
-          #
+          #️⃣
         </button>
         <button
           type="button"
           onClick={togglePicker}
-          class="flex items-center justify-center px-2 py-1 rounded-md focus:outline-none transition-colors duration-200 text-yellow-600 bg-gray-800 hover:bg-gray-800"
+          class="flex items-center justify-center px-2 py-1 rounded-md focus:outline-none transition-colors duration-200 text-yellow-600 bg-gray-900 hover:bg-gray-900"
           title="Emoji Picker"
         >
           🙂
