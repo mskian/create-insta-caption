@@ -1,10 +1,13 @@
-import { FC, useState, useCallback, useEffect } from 'preact/compat';
+import { FC, useState, useCallback } from 'preact/compat';
 import Fuse from 'fuse.js';
 import hashtagsData from '../data/hashtags.json';
 
 const fuse = new Fuse(hashtagsData, {
   includeScore: true,
-  threshold: 0.3,
+  threshold: 0.2,
+  keys: ['tag'],
+  shouldSort: true,
+  distance: 100,
 });
 
 interface HashtagInputProps {
@@ -33,54 +36,62 @@ const HashtagInput: FC<HashtagInputProps> = ({ hashtags, onAddHashtag, onRemoveH
 
       const lastPart = value.split(/[\s,]+/).pop() || '';
       if (lastPart.startsWith('#')) {
-        const filteredSuggestions = fuse.search(lastPart.slice(1)).map(result => result.item);
+        const query = lastPart.slice(1).toLowerCase();
+        const filteredSuggestions = fuse.search(query).map(result => result.item);
         setSuggestions(filteredSuggestions);
       } else {
         setSuggestions([]);
       }
-    }, 300),
+    }, 250),
     []
   );
 
   const handleKeyDown = (e: any) => {
-    if (e.key === 'Enter' || e.key === 'Tab' || e.key === ',') {
+    if (e.key === 'Enter' || e.key === ',' || e.key === ' ') {
       e.preventDefault();
 
-      const tags = input.split(/[\s,]+/).map(tag => tag.trim()).filter(tag => tag.startsWith('#') && tag.length > 1 && !tag.includes(' '));
+      const tags = input
+        .split(/[\s,]+/)
+        .map(tag => tag.trim())
+        .filter(tag => tag.startsWith('#') && tag.length > 1 && !hashtags.includes(tag));
 
-      const uniqueTags = Array.from(new Set(tags));
-      uniqueTags.forEach(tag => {
-        if (tag.length <= 36) {
-          if (!hashtags.includes(tag)) {
+      if (tags.length > 0) {
+        tags.forEach(tag => {
+          if (tag.length <= 36) {
             onAddHashtag(tag);
+            setInput('');
             setError(null);
           } else {
-            setError('Hashtag already added.');
+            setError('Hashtag cannot exceed 36 characters.');
           }
-        } else {
-          setError('Hashtag cannot exceed 100 characters.');
-        }
-      });
-
-      setInput('');
-      setSuggestions([]);
+        });
+        setSuggestions([]);
+      } else if (input.trim() !== '') {
+        setError('Hashtag already added or invalid.');
+      }
     }
   };
 
   const handleChange = (e: any) => {
     const value = e.currentTarget.value;
+    setInput(value);
     handleInputChange(value);
+  };
 
-    if (value.endsWith(',')) {
-      handleKeyDown({ key: ',' });
+  const handleBlur = () => {
+    if (!input.trim()) {
+      setError(null);
+    } else {
+      handleKeyDown({ key: 'Enter', preventDefault: () => {} });
     }
   };
 
   const handleSuggestionClick = (suggestion: string) => {
     if (!hashtags.includes(suggestion)) {
       onAddHashtag(suggestion);
+      setInput('');
+      setError(null);
     }
-    setInput('');
     setSuggestions([]);
   };
 
@@ -88,18 +99,25 @@ const HashtagInput: FC<HashtagInputProps> = ({ hashtags, onAddHashtag, onRemoveH
     onRemoveHashtag(hashtag);
   };
 
-  useEffect(() => {
-    handleInputChange(input);
-  }, [input]);
-
   return (
     <div class="relative mb-6 w-full max-w-lg mx-auto">
+      <div class="p-4 mb-4 text-sm text-black bg-yellow-100 border border-yellow-300 rounded-lg" role="alert">
+        <p>
+          Add a new tag by searching or just typing text with 
+          <span class="font-semibold text-yellow-900 bg-yellow-200 px-1 py-0.5 rounded-md mx-1">#</span>
+          and use 
+          <span class="font-semibold"> Enter</span> or 
+          <span class="font-semibold"> Comma</span> to insert a hashtag.
+        </p>
+      </div>
+
       <input
         type="text"
-        placeholder="#AddHashtags"
+        placeholder="#AddHashtag"
         value={input}
         onInput={handleChange}
         onKeyDown={handleKeyDown}
+        onBlur={handleBlur}
         class="w-full h-12 p-4 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-150 ease-in-out"
       />
       {error && <p class="text-red-500 text-sm mt-1">{error}</p>}
@@ -127,11 +145,11 @@ const HashtagInput: FC<HashtagInputProps> = ({ hashtags, onAddHashtag, onRemoveH
               >
                 {hashtag}
                 <button 
-                onClick={() => handleRemoveHashtag(hashtag)} 
-                class="ml-2 text-red-800 text-lg font-bold focus:outline-none hover:text-red-600"
-              >
-                &times;
-              </button>
+                  onClick={() => handleRemoveHashtag(hashtag)} 
+                  class="ml-2 text-red-800 text-lg font-bold focus:outline-none hover:text-red-600"
+                >
+                  &times;
+                </button>
               </span>
             </div>
           ))}
