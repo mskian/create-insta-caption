@@ -24,7 +24,7 @@ const OutputSection: FC<OutputSectionProps> = ({ caption, hashtags }) => {
   }
 
   return (
-    <div class="relative mt-8 p-11 bg-white border border-gray-300 rounded-xl shadow-xl max-w-2xl mx-auto">
+    <div class="relative mt-8 p-5 bg-white border border-gray-300 rounded-xl shadow-xl">
       {/* Copy Button */}
       {(caption || hashtags.length > 0) && (
         <button
@@ -44,7 +44,7 @@ const OutputSection: FC<OutputSectionProps> = ({ caption, hashtags }) => {
       {/* Caption and Hashtags Display */}
       <div class="pt-6">
         {caption && (
-          <p class="text-gray-800 text-base font-medium leading-relaxed whitespace-pre-line text-wrap break-words mb-6">
+          <p class="text-gray-800 text-base font-medium leading-relaxed whitespace-pre-line text-wrap break-words mb-8">
             {caption}
           </p>
         )}
@@ -53,7 +53,7 @@ const OutputSection: FC<OutputSectionProps> = ({ caption, hashtags }) => {
             {hashtags.map((hashtag) => (
               <span
                 key={hashtag}
-                class="bg-gradient-to-r from-pink-400 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-medium shadow-md whitespace-pre-line "
+                class="bg-gradient-to-r from-pink-400 to-purple-600 text-white px-4 py-1 mb-6 rounded-full text-sm font-medium shadow-md whitespace-pre-line "
               >
                 {hashtag}
               </span>

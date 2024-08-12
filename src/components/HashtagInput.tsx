@@ -100,8 +100,8 @@ const HashtagInput: FC<HashtagInputProps> = ({ hashtags, onAddHashtag, onRemoveH
   }, [input]);
 
   return (
-    <div class="relative mb-6 w-full max-w-lg mx-auto">
-      <div class="p-4 mb-4 text-sm text-black bg-yellow-300 border border-rose-300 rounded-lg" role="alert">
+    <div class="relative mb-8 w-full mx-auto">
+      <div class="p-4 mb-6 text-sm text-black bg-yellow-300 border border-rose-300 rounded-lg" role="alert">
         <p>
           Add a new tag by searching or just typing text with 
           <span class="font-semibold text-yellow-900 bg-purple-200 px-1 py-0.5 rounded-md mx-1">#</span>
@@ -116,7 +116,7 @@ const HashtagInput: FC<HashtagInputProps> = ({ hashtags, onAddHashtag, onRemoveH
         value={input}
         onInput={handleChange}
         onKeyDown={handleKeyDown}
-        class="w-full h-12 p-4 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-150 ease-in-out"
+        class="w-full mb-4 h-12 p-4 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-150 ease-in-out"
       />
       {error && <p class="text-red-500 text-sm mt-1">{error}</p>}
 
