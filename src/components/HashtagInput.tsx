@@ -135,7 +135,7 @@ const HashtagInput: FC<HashtagInputProps> = ({ hashtags, onAddHashtag, onRemoveH
       )}
 
       {hashtags.length > 0 && (
-        <div class="flex flex-wrap gap-2 mt-2">
+        <div class="flex flex-wrap gap-1 mt-2">
           {hashtags.map((hashtag, index) => (
             <div key={`${hashtag}-${index}`} class="flex items-center gap-1">
               <span

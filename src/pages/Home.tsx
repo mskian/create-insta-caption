@@ -54,12 +54,14 @@ const Home: FC = () => {
         )}
 
         {(caption || hashtags.length > 0) && (
+          <div class='flex flex-col items-center'>
           <button 
             onClick={clearAll} 
-            class="w-full mt-6 py-3 bg-gradient-to-r from-rose-500 to-purple-600 text-white font-semibold rounded-lg shadow-md hover:from-rose-600 hover:to-purple-700 transition-colors duration-200"
+            class="w-7/12 mt-6 py-3 bg-gradient-to-r from-rose-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:from-rose-600 hover:to-purple-700 transition-colors duration-200"
           >
-            Clear All
+            Clear Data
           </button>
+          </div>
         )}
       </main>
     </div>

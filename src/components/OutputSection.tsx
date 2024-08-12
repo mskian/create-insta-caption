@@ -49,11 +49,11 @@ const OutputSection: FC<OutputSectionProps> = ({ caption, hashtags }) => {
           </p>
         )}
         {hashtags.length > 0 && (
-          <div class="flex flex-wrap gap-3">
+          <div class="flex flex-wrap gap-1 mt-2">
             {hashtags.map((hashtag) => (
               <span
                 key={hashtag}
-                class="bg-gradient-to-r from-pink-400 to-purple-600 text-white px-4 py-1 mb-6 rounded-full text-sm font-medium shadow-md whitespace-pre-line "
+                class="bg-gradient-to-r from-pink-400 to-purple-600 text-white px-4 py-1 rounded-full cursor-default text-sm font-medium shadow-md whitespace-pre-line text-wrap break-words"
               >
                 {hashtag}
               </span>
