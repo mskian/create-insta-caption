@@ -18,8 +18,8 @@ importers:
         specifier: ^10.26.2
         version: 10.26.2
       react-icons:
-        specifier: ^5.4.0
-        version: 5.4.0(react@18.3.1)
+        specifier: ^5.5.0
+        version: 5.5.0(react@18.3.1)
       tailwindcss:
         specifier: ^4.0.8
         version: 4.0.8
@@ -755,8 +755,8 @@ packages:
   preact@10.26.2:
     resolution: {integrity: sha512-0gNmv4qpS9HaN3+40CLBAnKe0ZfyE4ZWo5xKlC1rVrr0ckkEvJvAQqKaHANdFKsGstoxrY4AItZ7kZSGVoVjgg==}
 
-  react-icons@5.4.0:
-    resolution: {integrity: sha512-7eltJxgVt7X64oHh6wSWNwwbKTCtMfK35hcjvJS0yxEAhPM8oUKdS3+kqaW1vicIltw+kR2unHaa12S9pPALoQ==}
+  react-icons@5.5.0:
+    resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
     peerDependencies:
       react: '*'
 
@@ -1485,7 +1485,7 @@ snapshots:
 
   preact@10.26.2: {}
 
-  react-icons@5.4.0(react@18.3.1):
+  react-icons@5.5.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 
