@@ -15,8 +15,8 @@ importers:
         specifier: ^7.1.0
         version: 7.1.0
       preact:
-        specifier: ^10.26.2
-        version: 10.26.2
+        specifier: ^10.26.4
+        version: 10.26.4
       react-icons:
         specifier: ^5.5.0
         version: 5.5.0(react@18.3.1)
@@ -26,7 +26,7 @@ importers:
     devDependencies:
       '@preact/preset-vite':
         specifier: ^2.10.1
-        version: 2.10.1(@babel/core@7.25.2)(preact@10.26.2)(vite@6.2.0(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.5.0))
+        version: 2.10.1(@babel/core@7.25.2)(preact@10.26.4)(vite@6.2.0(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.5.0))
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -752,8 +752,8 @@ packages:
     resolution: {integrity: sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==}
     engines: {node: ^10 || ^12 || >=14}
 
-  preact@10.26.2:
-    resolution: {integrity: sha512-0gNmv4qpS9HaN3+40CLBAnKe0ZfyE4ZWo5xKlC1rVrr0ckkEvJvAQqKaHANdFKsGstoxrY4AItZ7kZSGVoVjgg==}
+  preact@10.26.4:
+    resolution: {integrity: sha512-KJhO7LBFTjP71d83trW+Ilnjbo+ySsaAgCfXOXUlmGzJ4ygYPWmysm77yg4emwfmoz3b22yvH5IsVFHbhUaH5w==}
 
   react-icons@5.5.0:
     resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
@@ -1105,12 +1105,12 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@preact/preset-vite@2.10.1(@babel/core@7.25.2)(preact@10.26.2)(vite@6.2.0(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.5.0))':
+  '@preact/preset-vite@2.10.1(@babel/core@7.25.2)(preact@10.26.4)(vite@6.2.0(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.5.0))':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-transform-react-jsx': 7.25.2(@babel/core@7.25.2)
       '@babel/plugin-transform-react-jsx-development': 7.24.7(@babel/core@7.25.2)
-      '@prefresh/vite': 2.4.6(preact@10.26.2)(vite@6.2.0(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.5.0))
+      '@prefresh/vite': 2.4.6(preact@10.26.4)(vite@6.2.0(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.5.0))
       '@rollup/pluginutils': 4.2.1
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.25.2)
       debug: 4.3.6
@@ -1123,20 +1123,20 @@ snapshots:
 
   '@prefresh/babel-plugin@0.5.1': {}
 
-  '@prefresh/core@1.5.2(preact@10.26.2)':
+  '@prefresh/core@1.5.2(preact@10.26.4)':
     dependencies:
-      preact: 10.26.2
+      preact: 10.26.4
 
   '@prefresh/utils@1.2.0': {}
 
-  '@prefresh/vite@2.4.6(preact@10.26.2)(vite@6.2.0(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.5.0))':
+  '@prefresh/vite@2.4.6(preact@10.26.4)(vite@6.2.0(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.5.0))':
     dependencies:
       '@babel/core': 7.25.2
       '@prefresh/babel-plugin': 0.5.1
-      '@prefresh/core': 1.5.2(preact@10.26.2)
+      '@prefresh/core': 1.5.2(preact@10.26.4)
       '@prefresh/utils': 1.2.0
       '@rollup/pluginutils': 4.2.1
-      preact: 10.26.2
+      preact: 10.26.4
       vite: 6.2.0(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.5.0)
     transitivePeerDependencies:
       - supports-color
@@ -1483,7 +1483,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  preact@10.26.2: {}
+  preact@10.26.4: {}
 
   react-icons@5.5.0(react@18.3.1):
     dependencies:
