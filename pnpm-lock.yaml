@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@tailwindcss/vite':
         specifier: ^4.1.12
-        version: 4.1.12(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0))
+        version: 4.1.12(vite@6.3.6(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0))
       fuse.js:
         specifier: ^7.1.0
         version: 7.1.0
@@ -26,13 +26,13 @@ importers:
     devDependencies:
       '@preact/preset-vite':
         specifier: ^2.10.2
-        version: 2.10.2(@babel/core@7.25.2)(preact@10.27.1)(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0))
+        version: 2.10.2(@babel/core@7.25.2)(preact@10.27.1)(vite@6.3.6(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0))
       typescript:
         specifier: ^5.9.2
         version: 5.9.2
       vite:
-        specifier: ^6.3.5
-        version: 6.3.5(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0)
+        specifier: ^6.3.6
+        version: 6.3.6(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0)
 
 packages:
 
@@ -877,8 +877,8 @@ packages:
   vite-prerender-plugin@0.5.4:
     resolution: {integrity: sha512-nGcAiKbjBodQIkqN8g0iZ8CQyaNC5KcbVLhoJtj8oFddmfTDBP4CuFIW1dX2zAw9NFWfwoftevJP2x3HAmNjDw==}
 
-  vite@6.3.5:
-    resolution: {integrity: sha512-cZn6NDFE7wdTpINgs++ZJ4N49W2vRp8LCKrn3Ob1kYNtOo21vfDoaV5GzBfLU4MovSAB8uNRm4jgzVQZ+mBzPQ==}
+  vite@6.3.6:
+    resolution: {integrity: sha512-0msEVHJEScQbhkbVTb/4iHZdJ6SXp/AvxL2sjwYQFfBqleHtnCqv1J3sa9zbWz/6kW1m9Tfzn92vW+kZ1WV6QA==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
@@ -1178,17 +1178,17 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@preact/preset-vite@2.10.2(@babel/core@7.25.2)(preact@10.27.1)(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0))':
+  '@preact/preset-vite@2.10.2(@babel/core@7.25.2)(preact@10.27.1)(vite@6.3.6(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0))':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-transform-react-jsx': 7.25.2(@babel/core@7.25.2)
       '@babel/plugin-transform-react-jsx-development': 7.24.7(@babel/core@7.25.2)
-      '@prefresh/vite': 2.4.6(preact@10.27.1)(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0))
+      '@prefresh/vite': 2.4.6(preact@10.27.1)(vite@6.3.6(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0))
       '@rollup/pluginutils': 4.2.1
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.25.2)
       debug: 4.3.6
       picocolors: 1.1.1
-      vite: 6.3.5(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0)
+      vite: 6.3.6(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0)
       vite-prerender-plugin: 0.5.4
     transitivePeerDependencies:
       - preact
@@ -1202,7 +1202,7 @@ snapshots:
 
   '@prefresh/utils@1.2.0': {}
 
-  '@prefresh/vite@2.4.6(preact@10.27.1)(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0))':
+  '@prefresh/vite@2.4.6(preact@10.27.1)(vite@6.3.6(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0))':
     dependencies:
       '@babel/core': 7.25.2
       '@prefresh/babel-plugin': 0.5.1
@@ -1210,7 +1210,7 @@ snapshots:
       '@prefresh/utils': 1.2.0
       '@rollup/pluginutils': 4.2.1
       preact: 10.27.1
-      vite: 6.3.5(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0)
+      vite: 6.3.6(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -1343,12 +1343,12 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.1.12
       '@tailwindcss/oxide-win32-x64-msvc': 4.1.12
 
-  '@tailwindcss/vite@4.1.12(vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0))':
+  '@tailwindcss/vite@4.1.12(vite@6.3.6(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0))':
     dependencies:
       '@tailwindcss/node': 4.1.12
       '@tailwindcss/oxide': 4.1.12
       tailwindcss: 4.1.12
-      vite: 6.3.5(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0)
+      vite: 6.3.6(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0)
 
   '@types/estree@1.0.7': {}
 
@@ -1673,7 +1673,7 @@ snapshots:
       source-map: 0.7.4
       stack-trace: 1.0.0-pre2
 
-  vite@6.3.5(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0):
+  vite@6.3.6(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0):
     dependencies:
       esbuild: 0.25.0
       fdir: 6.4.4(picomatch@4.0.2)
