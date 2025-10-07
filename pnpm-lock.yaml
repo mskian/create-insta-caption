@@ -28,8 +28,8 @@ importers:
         specifier: ^2.10.2
         version: 2.10.2(@babel/core@7.25.2)(preact@10.27.2)(vite@7.1.7(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0))
       typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
+        specifier: ^5.9.3
+        version: 5.9.3
       vite:
         specifier: ^7.1.7
         version: 7.1.7(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.5.0)
@@ -875,8 +875,8 @@ packages:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
 
-  typescript@5.9.2:
-    resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1679,7 +1679,7 @@ snapshots:
 
   to-fast-properties@2.0.0: {}
 
-  typescript@5.9.2: {}
+  typescript@5.9.3: {}
 
   update-browserslist-db@1.1.0(browserslist@4.23.3):
     dependencies:
